@@ -1,15 +1,15 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
 
-<form action="/add" method="post">
+<form action="/update" method="post">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">name of title</label>
-    <input name="title" />
+    <input name="title" value="{{song.title}}" />
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">name of artist</label>
-    <input name="artist" />
+    <input name="artist" value="{{song.artist}}" />
   </div>
 
   <div class="mb-3">
@@ -19,12 +19,12 @@
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">songs runtime</label>
-    <input name="duration" />
+    <input name="duration" value="{{song.duration}}" />
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">songs album</label>
-    <input name="album" />
+    <input name="album" value="{{song.album}}" />
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

@@ -36,22 +36,22 @@ def init_routes(app):
 
 
 
-    @app.route('/update', methods=['POST'])
-    def update_item():
+    @app.route('/update', methods=['POST','GET'])
+    def update():
         if request.method == 'POST':
-            song = Song (
-            title = request.form.get("title"),
-            artist  = request.form.get("artist"),
-            image = request.form.get("image"),
-            duration  = request.form.get("duration"),
-            album  = request.form.get("album"),
-            )
-            db.session.add(song)
+            id = request.args.get('id')
+            song = Song.query.get(id)
+            song.title = request.form.get("title")
+            song.artist  = request.form.get("artist")
+            song.image = request.form.get("image")
+            song.duration  = request.form.get("duration")
+            song.album  = request.form.get("album")
             db.session.commit()
             return redirect(url_for('get_items'))
         else:
-            # Display the add item form (GET request)
-            return render_template('edit.html')
+            id = request.args.get('id')
+            song = Song.query.get(id)
+            return render_template('edit.html',song = song)
        
 
 
