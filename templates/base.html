@@ -24,7 +24,26 @@
   </head>
 
   <body>
-    <!-- Add your navbar here -->
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">music</a>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <a href="{{ url_for('add') }}"><button class="btn btn-outline-success" type="button">add</button></a>
+
+        </div></a>
+      </nav>
+    </nav>
 
     <!-- Container for content -->
 

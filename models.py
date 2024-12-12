@@ -9,9 +9,9 @@ class Song(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     artist = db.Column(db.String(100), nullable=False)
     title = db.Column(db.Text)
-    length = db.Column(db.interger, nullable=False)
+    length = db.Column(db.Integer, nullable=False)
     genre = db.Column(db.Integer, nullable=False)
-    rating = db.Column(db.string, default=False)
+    rating = db.Column(db.String, default=False)
 
     def __repr__(self):
         return f'<Fish {self.Fish}>'

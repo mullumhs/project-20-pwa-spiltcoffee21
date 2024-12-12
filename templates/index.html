@@ -5,13 +5,27 @@
 
 <!-- Add your page-specific content here -->
 <div class="row">
+  {%for i in range(12)%}
   <div class="col-12 col-md-6 col-lg-4">
-    <!-- This column will be full width on small screens, 
-
-           half width on medium screens, 
-
-           and one-third width on large screens -->
+    <div class="card mb-4">
+      <img
+        src="https://m.media-amazon.com/images/I/81zUYKkvxFL._UF1000,1000_QL80_.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">tommy the cat</h5>
+        
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">primus</li>
+        <li class="list-group-item">sailing the sea of cheese</li>
+        <li class="list-group-item">4:25</li>
+      </ul>
+    </div>
   </div>
+  {%endfor%}
 </div>
 
 {% endblock %}

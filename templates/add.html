@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">name of title</label>
+    <input name="title" />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">name of artist</label>
+    <input name="artist" />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">songs runtime</label>
+    <input name="duration" />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">songs album</label>
+    <input name="album" />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
