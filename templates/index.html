@@ -8,6 +8,7 @@
   {%for song in songs%}
   <div class="col-12 col-md-6 col-lg-4">
     <div class="card mb-4">
+     
       <img
         src="{{song.image}}"
         class="card-img-top"
@@ -22,6 +23,9 @@
         <li class="list-group-item">{{song.artist}}</li>
         <li class="list-group-item">{{song.album}}</li>
         <li class="list-group-item">{{song.duration}}</li>
+        <a href="#" class="btn btn-primary">edit</a>
+        <a href="#" class="btn btn-primary">delete</a>
+        
       </ul>
     </div>
   </div>
