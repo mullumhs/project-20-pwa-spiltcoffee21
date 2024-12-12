@@ -5,23 +5,23 @@
 
 <!-- Add your page-specific content here -->
 <div class="row">
-  {%for i in range(12)%}
+  {%for song in songs%}
   <div class="col-12 col-md-6 col-lg-4">
     <div class="card mb-4">
       <img
-        src="https://m.media-amazon.com/images/I/81zUYKkvxFL._UF1000,1000_QL80_.jpg"
+        src="{{song.image}}"
         class="card-img-top"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title">tommy the cat</h5>
+        <h5 class="card-title">{{song.title}}</h5>
         
         </p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">primus</li>
-        <li class="list-group-item">sailing the sea of cheese</li>
-        <li class="list-group-item">4:25</li>
+        <li class="list-group-item">{{song.artist}}</li>
+        <li class="list-group-item">{{song.album}}</li>
+        <li class="list-group-item">{{song.duration}}</li>
       </ul>
     </div>
   </div>

@@ -12,18 +12,24 @@ def init_routes(app):
     @app.route('/', methods=['GET'])
     def get_items():
         # This route should retrieve all items from the database and display them on the page.
-        return render_template('index.html', message='Displaying all items')
+        songs = Song.query.all() 
+        return render_template('index.html', songs=songs)
 
 
 
     @app.route('/add', methods=['GET','POST'])
     def add():
         if request.method == 'POST':
-            # Handle form submission (POST request)
-            # Extract item data from form
-            # Add item to database
-            # Redirect to a success page or item list
-            return redirect(url_for('index'))
+            song = Song (
+            title = request.form.get("title"),
+            artist  = request.form.get("artist"),
+            image = request.form.get("image"),
+            duration  = request.form.get("duration"),
+            album  = request.form.get("album"),
+            )
+            db.session.add(song)
+            db.session.commit()
+            return redirect(url_for('get_items'))
         else:
             # Display the add item form (GET request)
             return render_template('add.html')
@@ -32,8 +38,21 @@ def init_routes(app):
 
     @app.route('/update', methods=['POST'])
     def update_item():
-        # This route should handle updating an existing item identified by the given ID.
-        return render_template('index.html', message=f'Item updated successfully')
+        if request.method == 'POST':
+            song = Song (
+            title = request.form.get("title"),
+            artist  = request.form.get("artist"),
+            image = request.form.get("image"),
+            duration  = request.form.get("duration"),
+            album  = request.form.get("album"),
+            )
+            db.session.add(song)
+            db.session.commit()
+            return redirect(url_for('get_items'))
+        else:
+            # Display the add item form (GET request)
+            return render_template('edit.html')
+       
 
 
 

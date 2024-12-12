@@ -7,11 +7,12 @@ db = SQLAlchemy()
 
 class Song(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    artist = db.Column(db.String(100), nullable=False)
     title = db.Column(db.Text)
-    length = db.Column(db.Integer, nullable=False)
-    genre = db.Column(db.Integer, nullable=False)
-    rating = db.Column(db.String, default=False)
+    artist = db.Column(db.String(100), nullable=False)
+    image = db.Column(db.String(100), nullable=False)
+    duration = db.Column(db.Integer, nullable=False)
+    album = db.Column(db.Integer, nullable=False)
+    
 
     def __repr__(self):
-        return f'<Fish {self.Fish}>'
+        return f'<Song {self.song}>'
